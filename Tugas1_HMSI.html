@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluasi Nilai Ujian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Masukkan Nilai Ujian:</h2>
+<input type="number" id="nilaiUjian" min="0" max="100" placeholder="Masukkan nilai">
+<button onclick="evaluateGrade()">Evaluasi</button>
+
+<div id="result"></div>
+
+<script>
+    function evaluateGrade() {
+        let nilaiUjian = document.getElementById("nilaiUjian").value;
+        let result;
+
+        if (nilaiUjian >= 90) {
+            result = 'Selamat! Anda mendapatkan nilai A.';
+        } else if (nilaiUjian >= 80) {
+            result = 'Anda mendapatkan nilai B.';
+        } else if (nilaiUjian >= 70) {
+            result = 'Anda mendapatkan nilai C.';
+        } else if (nilaiUjian >= 60) {
+            result = 'Anda mendapatkan nilai D.';
+        } else {
+            result = 'Anda mendapatkan nilai E.';
+        }
+
+        document.getElementById("result").innerText = result;
+    }
+</script>
+
+</body>
+</html>
